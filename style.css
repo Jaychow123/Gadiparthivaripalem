@@ -1,62 +1,251 @@
-body {
-  font-family: "Noto Sans Telugu", sans-serif;
+/* =====================
+   Global & Reset Styles
+===================== */
+* {
   margin: 0;
-  background: #f7f7f7;
+  padding: 0;
+  box-sizing: border-box;
 }
-header {
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans Telugu', sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =====================
+   Navigation Bar
+===================== */
+.navbar {
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #e74c3c;
+}
+
+/* =====================
+   Hero Section
+===================== */
+.hero {
   position: relative;
-  height: 300px;
+  margin-top: 60px; /* navbar height */
+  height: 400px;
   overflow: hidden;
 }
-.background-img {
+
+.hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.75);
 }
-.overlay {
+
+.hero-overlay {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  left: 0; right: 0; bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: #fff;
+  text-align: center;
 }
-h1 {
-  font-size: 2.5rem;
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
-p {
+
+.hero-overlay p {
+  margin-top: 10px;
   font-size: 1.2rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
-#events, #about {
-  padding: 20px;
+
+/* =====================
+   Section Containers
+===================== */
+.section-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
 }
+
+.section-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #e74c3c;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* =====================
+   Events Grid & Cards
+===================== */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
 .event-card {
-  background: white;
-  padding: 10px;
-  margin: 10px 0;
+  background: #fff;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.event-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.event-card-content {
+  padding: 15px;
+}
+
+.event-card-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.event-card-content p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* =====================
+   About Section
+===================== */
+.about-section .about-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-content p {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+/* =====================
+   Modal Styles
+===================== */
 .modal {
   display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.7);
+  z-index: 2000;
+  overflow-y: auto;
+  padding: 50px 20px;
 }
+
 .modal-content {
-  background: white;
-  margin: 10% auto;
-  padding: 20px;
-  max-width: 500px;
+  background: #fff;
+  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .close-btn {
-  float: right;
-  font-size: 20px;
+  display: block;
+  text-align: right;
+  font-size: 1.5rem;
+  padding: 10px 15px;
   cursor: pointer;
+  color: #e74c3c;
+}
+
+#modal-data {
+  padding: 15px 20px;
+}
+
+#modal-data h3 {
+  margin-bottom: 10px;
+}
+
+#modal-data p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+#modal-data img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* =====================
+   Responsive Tweaks
+===================== */
+@media (max-width: 600px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+  .hero-overlay p {
+    font-size: 1rem;
+  }
 }
