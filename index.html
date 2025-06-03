@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="te">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>గాడిపర్తివారిపాలెం</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>గాడిపర్తివారిపాలెం | చిమకూర్తి మండలం, ప్రకాశం జిల్లా</title>
+  
+  <!-- Google Font: Noto Sans Telugu -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="images/village.jpg" alt="గాడిపర్తివారిపాలెం" class="background-img">
-    <div class="overlay">
+
+  <!-- ======= Navigation Bar ======= -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">గాడిపర్తివారిపాలెం</a>
+      <ul class="nav-links">
+        <li><a href="#events">ఈవెంట్లు</a></li>
+        <li><a href="#about">గ్రామం గురించి</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ======= Hero Section ======= -->
+  <header class="hero">
+    <img src="images/village.jpg" alt="గాడిపర్తివారిపాలెం" class="hero-img" />
+    <div class="hero-overlay">
       <h1>గాడిపర్తివారిపాలెం</h1>
       <p>చిమకూర్తి మండలం, ప్రకాశం జిల్లా, ఆంధ్రప్రదేశ్</p>
     </div>
   </header>
 
-  <section id="events">
+  <!-- ======= Events Section ======= -->
+  <section id="events" class="section-container">
     <h2>ఈవెంట్లు</h2>
-    <div id="event-list"></div>
+    <div class="events-grid" id="event-list">
+      <!-- ఇక్కడ JavaScript ద్వారా ఈవెంట్ కార్డ్స్ చేరుస్తాం -->
+    </div>
   </section>
 
-  <section id="about">
-    <h2>గ్రామ వివరాలు</h2>
-    <p>జనాభా: 2200</p>
-    <p>మొత్తం భూమి: 3,436,485.80 చ.అడుగులు (319,259.98 చ.మీ.)</p>
-    <p>పాఠశాలలు: ZPHS హైస్కూల్, అంగన్వాడి</p>
-    <p>ఆలయాలు: శివాలయం, పోలేరమ్మ ఆలయం, శ్రీరాముల వారి దేవాలయం, సాయిబాబా ఆలయం</p>
-    <p>సమీప పట్టణాలు: ఒంగోలు, చిమకూర్తి</p>
+  <!-- ======= About Section ======= -->
+  <section id="about" class="section-container about-section">
+    <h2>గ్రామం గురించి</h2>
+    <div class="about-content">
+      <p><strong>జనాభా:</strong> 2200</p>
+      <p><strong>మొత్తం భూమి:</strong> 3,436,485.80 చ.అడుగులు (<em>319,259.98 చ.మీ.</em>)</p>
+      <p><strong>పాఠశాలలు:</strong> ZPHS హైస్కూల్, అంగన్వాడి</p>
+      <p><strong>ఆలయాలు:</strong> శివాలయం, పోలేరమ్మ ఆలయం, శ్రీరాముల వారి దేవాలయం, సాయిబాబా ఆలయం</p>
+      <p><strong>సమీప పట్టణాలు:</strong> ఒంగోలు, చిమకూర్తి</p>
+    </div>
   </section>
 
+  <!-- ======= Event Modal ======= -->
   <div id="event-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
